@@ -479,7 +479,24 @@ hr {
 
 .numberCon {
     /* background-color: rgb(167, 161, 161); */
-    background-color: red !important;
+    background-color:#A2988D!important;
+}
+input[type='number'] {
+    text-align: center;
+}
+.fstsmall {
+    margin-left: 40px;
+}
+.naps {
+    margin-left:  20px;
+ }
+.firstPageSelect > div {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    margin: 5px 0 5px  -125px;
+    
+   
 }
 
 
