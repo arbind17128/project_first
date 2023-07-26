@@ -7,12 +7,29 @@ const clickRight =document.querySelectorAll('.clickRight');
 const clickleft =document.querySelectorAll('.leftClick');
 const ul=document.querySelectorAll('.container ul li');
 
-console.log(ul);
+const fstno = document.getElementById('fstno')
 
+// this is to increament the no
+const minusBtn = document.getElementById('minusbtn');
+const plusBtn = document.getElementById('plusbtn')
+const noInput= document.getElementById('noInput');
 
-// ul.forEach((u,index)=> {
-//   u.classList.add('numberCon');
-// })
+plusBtn.addEventListener('click', increaseNo);
+minusBtn.addEventListener('click', decreamentNo);
+function increaseNo() {
+    var value = parseInt(noInput.value, 10);
+    value = isNaN(value) ? 0 : value;
+    value++;
+    noInput.value= value;
+
+  }
+  function decreamentNo() {
+    var value = parseInt(noInput.value, 10);
+    value = isNaN(value) ? 0 : value;
+    value--;
+    noInput.value= value;
+
+  }
 
 
 
@@ -28,7 +45,7 @@ listItems.forEach((item, idx) => {
 
         item.classList.add('active');
         contents[idx].classList.add('show');
-        ul[idx].classList.add('numberCon');
+        // ul[idx].classList.add('numberCon');
         
     } )
 })
@@ -61,16 +78,32 @@ function startSlide() {
 function slideLeft() {
   reset();
   container[current - 1].style.display = "block";
-  ul[current-1].classList.add('numberCon');
+  // ul[current].classList.add('numberCon');
   current--;
+
+  fstno.innerText=current+1;
 }
 
 // Show next
 function slideRight() {
   reset();
+  current+=1;
+  container[current].style.display = "block";
+  var li=container[current].querySelectorAll('ul li');
+  console.log(li[current]);
   
-  container[current + 1].style.display = "block";
-  current++;
+  // var ultwo = {...li};
+  // console.log(ultwo);
+ 
+  console.log(li.firstElementChild);
+  li[current].classList='numberCon';
+  // ul[current+1].classList = 'numberCon'
+  // console.log(ul[current+1]);
+  // current++;
+  
+ fstno.innerText=current+1;
+
+
 }
 
 // Left arrow click
@@ -80,7 +113,9 @@ function clickedBack() {
   
   if (current === 0) {
     current = container.length;
+    
   }
+  
   slideLeft();
 };
 
@@ -110,6 +145,7 @@ clickleft.forEach(b => {
 
 
 // clickRight.addEventListener("click", clickedRight);
+
 
 startSlide();
 
