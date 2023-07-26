@@ -78,7 +78,7 @@
                 <div class="container">
                     <img src="./img/Knauf-logo.png" alt="" width="50px">
                     <ul>
-                        <li><a href="#">1</a></li>
+                        <li class="numberCon"><a href="#">1</a></li>
                         <li><a href="#">2</a></li>
                         <li><a href="#">3</a></li>
                         <li><a href="#">4</a></li>
@@ -88,24 +88,27 @@
                     <p>Fur die sanierung.</p>
                     <img src="./img/line.png" class="lineimg" alt="">
                     <h3>ich kenne </h3>
-                    <div><input type="checkbox">Erdgas</div>
-                    <div><input type="checkbox">Erdgas</div>
-                    <div><input type="checkbox"> Erdgas</div>
-                    <div><input type="checkbox"> Erdgas</div>
-                    <div><input type="checkbox"> Erdgas</div>
+                    <div class="firstPageSelect">
+                        <div><input type="checkbox"><span class="naps">Erdgas</span></div>
+                    <div><input type="checkbox"><span class="naps">Erdgas</span></div>
+                    <div><input type="checkbox"> <span class="naps">Erdgas</span></div>
+                    <div><input type="checkbox"> <span class="naps">Erdgas</span></div>
+                    <div><input type="checkbox"> <span class="naps">Erdgas</span></div>
+                    </div>
                     <h3>Lorem, ipsum dolor sit</h3>
         
-                    <small>Menge in m <sup>3</sup></small>
+                    <small class="fstsmall">Menge in m <sup>3</sup></small>
                     <div class="plus-minus">
-                        <i class="fa-solid fa-circle-minus fa-lg"></i>
-                        <div class="page-no">5</div>
-                        <i class="fa-solid fa-circle-plus fa-lg"></i>
+                        <i class="fa-solid fa-circle-minus fa-lg" id="minusbtn"></i>
+                        <input type="number" class="page-no" id="noInput" value="1">
+                        <i class="fa-solid fa-circle-plus fa-lg" id="plusbtn"></i>
                     </div>
                     <div class="two-btn">
-                        <button class="btn leftClick"></a><i class="fa fa-angle-left" aria-hidden="true"> </i> something</button>
-                        <button class="btn clickRight"></a><i class="fa fa-angle-left" aria-hidden="true"> </i> something</button>
+                        <button class="btn leftClick"></a><i class="fa fa-angle-left" aria-hidden="true"> </i> Zuruck</button>
+                        <button class="btn clickRight"></a>Weiter <i class="fa fa-angle-right" aria-hidden="true"> </i></button>
                     </div>
                 </div>
+              
         
                 <div class="container" id="3">
                     <img src="./img/Knauf-logo.png" alt="" width="50px">
@@ -144,42 +147,13 @@
         
                     <div class="two-btn mt-1">
                         <button class="btn leftClick"><a href=""><i class="fa fa-angle-left" aria-hidden="true"> </i>
-                                something</a></button>
-                        <button class="btn clickRight"><a href="#">something <i class="fa fa-angle-right"
+                            Zuruck</a></button>
+                        <button class="btn clickRight"><a href="#">Weiter<i class="fa fa-angle-right"
                                     aria-hidden="true"></i></a></button>
                     </div>
                 </div>
         
-                <div class="container" id="4">
-                    <img src="./img/Knauf-logo.png" alt="" width="50px">
-                    <ul>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                    </ul>
-                    <p>Unsere Empfehlung</p>
-                    <p>Fur die sanierung.</p>
-                    <img src="./img/line.png" class="lineimg" alt="">
-                    <h3>Lorem ipsum dolor, sit amet conse sicing elit.lendus</h3>
-        
-                    <div class="main-hoursclass">
-                        <img src="./img/hourglass-clipart-1672829725Y8J.png" class="hoursclass" alt="">
-                    </div>
-        
-        
-        
-        
-                    <div class="two-btn mt-1">
-                        <button class="btn leftClick"><a href=""><i class="fa fa-angle-left" aria-hidden="true"> </i>
-                                something</a></button>
-                        <button class="btn clickRight"><a href="#">something <i class="fa fa-angle-right"
-                                    aria-hidden="true"></i></a></button>
-                    </div>
-        
-        
-                </div>
+                
         
         
                 <!--here-->
@@ -224,10 +198,41 @@
         
                     <div class="two-btn mt-1">
                         <button class="btn leftClick"><a href=""><i class="fa fa-angle-left" aria-hidden="true"> </i>
-                                something</a></button>
-                        <button class="btn clickRight"><a href="#">something <i class="fa fa-angle-right"
+                            Zuruck</a></button>
+                        <button class="btn clickRight"><a href="#">Zuruck <i class="fa fa-angle-right"
                                     aria-hidden="true"></i></a></button>
                     </div>
+        
+                </div>
+
+                <div class="container" id="4">
+                    <img src="./img/Knauf-logo.png" alt="" width="50px">
+                    <ul>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                    </ul>
+                    <p>Unsere Empfehlung</p>
+                    <p>Fur die sanierung.</p>
+                    <img src="./img/line.png" class="lineimg" alt="">
+                    <h3>Lorem ipsum dolor, sit amet conse sicing elit.lendus</h3>
+        
+                    <div class="main-hoursclass">
+                        <img src="./img/hourglass-clipart-1672829725Y8J.png" class="hoursclass" alt="">
+                    </div>
+        
+        
+        
+        
+                    <div class="two-btn mt-1">
+                        <button class="btn leftClick"><a href=""><i class="fa fa-angle-left" aria-hidden="true"> </i>
+                            Zuruck</a></button>
+                        <button class="btn clickRight"><a href="#">Weiter <i class="fa fa-angle-right"
+                                    aria-hidden="true"></i></a></button>
+                    </div>
+        
         
                 </div>
         
@@ -340,8 +345,8 @@
         
                     <div class="two-btn mt-1">
                         <button class="btn leftClick"><a href=""><i class="fa fa-angle-left" aria-hidden="true"> </i>
-                                something</a></button>
-                        <button class="btn clickRight"><a href="#">something <i class="fa fa-angle-right"
+                            Zuruck</a></button>
+                        <button class="btn clickRight"><a href="#">Weiter <i class="fa fa-angle-right"
                                     aria-hidden="true"></i></a></button>
                     </div>
         
@@ -375,7 +380,7 @@
                     <hr>
                     <p class="p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo ab consequuntur nobis, cumque
                         facilis pariatur sequi eos quam beatae doloremque doloribus neque! <a href="">heir</a></p>
-                    <button class="leftClick"></a><i class="fa fa-angle-left" aria-hidden="true"> </i> something</button>
+                    <button class="leftClick"></a><i class="fa fa-angle-left" aria-hidden="true"> </i> Zuruck</button>
                     
         
         
@@ -405,7 +410,7 @@
             <div class="button-middle">
                 <small><i class="fa-sharp fa-solid fa-house" ></i></small>
                 <i class="fa fa-angle-left" aria-hidden="true" id="slideletf"></i>
-                <p>1 of 11</p>
+                <p><span id="fstno">1</span> of 11</p>
                 <i class="fa fa-angle-right" aria-hidden="true" id="slideright"></i>
             </div>
             <div><small><a href="#">Link Updared may 23, 2023, 10:50PM</a></small> </div>
