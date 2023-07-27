@@ -516,7 +516,7 @@ input[type='number'] {
 
     /* this stand progress bas */
     .slidecontainer {
-        height: 65%;
+        height: 50%;
          transform: rotate(-90deg);
        }
        
