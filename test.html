@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .step {
+            background-color: #e6e6e6;
+            display: flex;
+            max-width: 50%;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .steps {
+            width: calc((100% - 10px) / 5);
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+        }
+
+        img {
+            filter: invert(1);
+            width: 28px;
+            height: 100%;
+
+        }
+        .clip > p {
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    background-color: red;
+}
+    </style>
+</head>
+
+<body>
+    <div class="step">
+        <div class="steps has-icon">
+            <p>1</p><span><img src="./img/icon-svg.png" alt=""></span>
+        </div>
+        <div class="steps has-icon">
+            <p>2</p><span><img src="./img/icon-svg.png" alt=""></span>
+        </div>
+        <div class="steps has-icon">
+            <p>3</p><span><img src="./img/icon-svg.png" alt=""></span>
+        </div>
+        <div class="steps has-icon">
+            <p>4</p><span><img src="./img/icon-svg.png" alt=""></span>
+        </div>
+        <div class="steps has-icon">
+            <p>5</p><span></span>
+        </div>
+    </div>
+    <div class="clip">
+        <p>2</p>
+        <p>3</p>
+    </div>
+</body>
+
+</html>
