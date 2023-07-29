@@ -1,73 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.slidecontainer {
- height: 100%;
-  transform: rotate(-90deg);
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>progress bar</title>
+  <style>
+    * {
+      margin: 0;padding: 0;
+    }
+    body {
+      background-color: rgb(202, 78, 78);
+      font-family: sans-serif;
+      padding: 10px;
+    }
+    .main {
+      width: 60%;
+      margin: 24% auto;
+      position: relative;
+      transform: rotate(-90deg);
+    }
+    #slider{
+      -webkit-appearance: none;
+      width: 100%;
+      height: 7px;
+      outline: none;
+      border-radius: 3px;
+    }
+    #slider::-webkit-slider-thumb{
+      -webkit-appearance: none;
+      height: 48px;
+      width: 48px;
+      cursor: pointer;
+      z-index: 3;
+      position: relative;
+    }
+    #selector {
+      height: 104px;
+      width: 48px;
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;                 
 
-.slider {
-  -webkit-appearance: none;
-  width: 100%;
-  height: 15px;
-  border-radius: 5px;
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-}
+    }
+    .selectBtn {
+      height: 48px;
+      width: 48px;
+      background-image: url(/img/airplane.webp);
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 0px;
 
-.slider:hover {
-  opacity: 1;
-}
-
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background: #aa4f04;
-  cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: #0e0ae4;
-  cursor: pointer;
-}
-.vertical {
-  display: inline-block;
-  width: 20%;
-  height: 40px;
-  -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
-  transform: rotate(-90deg);
-}
-</style>
+    }
+    p{
+      color: white;
+    }
+    .main-main {
+      display: flex;
+    }
+  </style>
 </head>
 <body>
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="emyE2CLgXvI1" viewBox="0 0 300 300" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"><line x1="-71.000463" y1="1.043357" x2="71.000464" y2="-1.043358" transform="translate(71.000464 131.810805)" fill="none" stroke="#3f5787" stroke-width="3"/><line x1="-15" y1="0" x2="15" y2="0" transform="translate(253.292372 205.889172)" fill="none" stroke="#3f5787" stroke-width="3"/><line x1="1.043357" y1="-65.383723" x2="-1.043357" y2="65.383724" transform="translate(223.730582 65.383724)" fill="none" stroke="#3f5787" stroke-width="3"/><line x1="-16.172038" y1="0" x2="16.172038" y2="0" transform="translate(207.558544 130.767447)" fill="none" stroke="#3f5787" stroke-width="3"/><line x1="13.563645" y1="-27.475076" x2="-13.563645" y2="27.475076" transform="translate(128.437283 158.242523)" fill="none" stroke="#3f5787" stroke-width="3"/><line x1="40.690935" y1="-27.475076" x2="-40.690934" y2="27.475076" transform="translate(150.695572 158.242523)" fill="none" stroke="#3f5787" stroke-width="3"/><line x1="0.347786" y1="0.347785" x2="-0.347786" y2="-0.347785" transform="translate(54.011129 271.620682)" fill="none" stroke="#3f5787" stroke-width="3"/></svg>
+<div class="main-main">
+  <div class="left">
+    <div>
+      <p>hi 1</p>
+      <p>hi 2</p>
+      <p>hi 3</p>
+    </div>
+  </div>
+  <div class="main">
+   
+    <input type="range" min="0" max="100" value="50" id="slider" >
+    <hr>
+    <div id="selector">
+      <div class="selectBtn"></div>
 
-<h1>Round Range Slider</h1>
-
-<div class="slidecontainer">
-  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-  <p>Value: <span id="demo"></span></p>
+    </div>
+    <hr>
+  
+  </div>
+  <div class="left">
+    <div>
+      <p>hi 1</p>
+      <p>hi 2</p>
+      <p>hi 3</p>
+    </div>
+  </div>
 </div>
-
-<script>
-var slider = document.getElementById("myRange");
-var output = document.getElementById("demo");
-output.innerHTML = slider.value;
-
-slider.oninput = function() {
-  output.innerHTML = this.value;
-}
-</script>
-
+ <script >
+  var slider = document.getElementById('slider');
+  var selector = document.getElementById('selector');
+  slider.oninput = function() {
+    selector.style.left = this.value + "%";
+  }
+ </script>  
 </body>
 </html>

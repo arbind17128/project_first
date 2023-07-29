@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+	margin: 0;
+}
+
+.container {
+	background-image: url("https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=100");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+	height: 100vh;
+	width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.star {
+	background-color: #fff;
+	box-shadow: 0 0 10px rgba(255, 255, 255);
+	border-radius: 50%;
+	position: absolute;
+	opacity: 0;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: 4px;
+	width: 4px;
+}
+p {
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+}
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+       <p> Hello world</p>
+    </div>
+
+    <script>
+        const container = document.getElementById('container');
+
+const timeToRunAnim = 5000;
+let starIdx = 0;
+
+setInterval(() => createStars(7), 100);
+
+function createStar() {
+	const starEl = document.createElement('div');
+	const styleEl = document.createElement('style');
+	starEl.classList.add('star');
+	starEl.classList.add(`star-${++starIdx}`);
+	starEl.style.animation = `moveto-${starIdx} ${timeToRunAnim}ms linear forwards`;
+	
+	const endX = Math.random() * 200 - 100;
+	const endY = Math.random() * 200 - 100;
+		
+	styleEl.innerHTML += `
+		@keyframes moveto-${starIdx} {
+			20% {
+				opacity: 0;
+			}
+			50% {
+				opacity: 1;
+			}
+			100% {
+				transform: scale(3) translate(${endX}vw, ${endY}vh);
+				opacity: 0;
+			}
+		}
+	`;
+	
+	container.appendChild(starEl);
+	container.appendChild(styleEl);
+	
+	setTimeout(() => {
+		starEl.remove();
+		styleEl.remove();
+	}, timeToRunAnim);
+}
+
+function createStars(num) {
+	for(let i=0; i<num; i++) {
+		createStar();
+	}
+}
+    </script>
+</body>
+</html>
