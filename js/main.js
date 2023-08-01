@@ -1,13 +1,37 @@
-const contents = document.querySelectorAll('.content')
-const listItems = document.querySelectorAll('nav .inr-bnt > div')
-const container = document.querySelectorAll('.container');
-const arrowLeft = document.getElementById('slideletf');
+const contents   = document.querySelectorAll('.content')
+const listItems  = document.querySelectorAll('nav .inr-bnt > div')
+const container  = document.querySelectorAll('.container');
+const arrowLeft  = document.getElementById('slideletf');
 const arrowRight = document.getElementById('slideright');
 const clickRight = document.querySelectorAll('.clickRight');
-const clickLeft = document.querySelectorAll('.leftClick');
-const ul = document.querySelectorAll('.container ul li');
-const startBtn = document.getElementById('start-btn');
+const clickLeft  = document.querySelectorAll('.leftClick');
+const ul         = document.querySelectorAll('.container ul li');
+const startBtn   = document.getElementById('start-btn');
+
+// this stands to target  3 slide
+const actInp     = document.querySelectorAll('.actInp');
+// actInp.forEach(e=>{
+//   e.addEventListener('click', f=> {
+//     document.getElementById('name1').disabled=true;
+//     if(e.checked) {
+//       document.getElementById('name1').disabled=true;
+//       document.getElementById('name').disabled=true;
+
+//     } else {
+//       document.getElementById('name1').disabled= false;
+//       document.getElementById('name').disabled = false;
+    
+//     }
+  
+
+//   })
+
+// }
+//   )
+
 console.log(startBtn);
+console.log(clickRight);
+console.log(clickLeft);
 
 const fstno = document.getElementById('fstno')
 
@@ -151,6 +175,7 @@ function clickToStart() {
 
 
 
+// this is res posible for making check box enable and disable
 
 var first1 = document.getElementById('contenct1');
 var first2 = document.getElementById('contenct2');
@@ -162,7 +187,7 @@ checkboxOfFirst1.forEach(e => {
   e.addEventListener('click', e => {
     if (checkboxOfFirst1[0].checked || checkboxOfFirst1[1].checked) {
       checkboxOfFirst2.forEach(c => {
-        c.disabled = true
+        c.disabled = true;
       })
     } else {
       checkboxOfFirst2.forEach(c => {
@@ -183,8 +208,73 @@ checkboxOfFirst2.forEach(e => {
 
 
 
+function ckChange(ckType){
+  var ckName = document.getElementsByName(ckType.name);
+  var checked = document.getElementById(ckType.id);
+      console.log(checked);
+  if (checked.checked) {
+    for(var i=0; i < ckName.length; i++){
+
+        if(!ckName[i].checked){
+            ckName[i].disabled = true;
+        }else{
+            ckName[i].disabled = false;
+        }
+    } 
+  }
+  else {
+    for(var i=0; i < ckName.length; i++){
+      ckName[i].disabled = false;
+    } 
+  }    
+}
 
 
+var textInputs = document.querySelectorAll('.actInp');
+textInputs.forEach(inputElement=>{
+  if(inputElement.type == 'text'){
+    inputElement.onfocus  = function() {myFunction(inputElement)}
+    inputElement.onblur  = function() {myFunction2(inputElement)}
+  }
+  if (inputElement.type == 'checkbox') {
+    inputElement.addEventListener('click',()=>{
+      if(inputElement.checked){
+        myFunction(inputElement)
+        console.log('testchecked');
+      }
+      if(!inputElement.checked){
+        myFunction2(inputElement)
+        console.log('testunchecked');
+      }
+
+    })
+  }
+})
 
 
+function myFunction(e){
+  textInputs.forEach(element=>{
+    if(element.id != e.id){
+      element.disabled=true;
+    }
+  })
+}
 
+function myFunction2(e){
+  if(!e.value && e.type=='text'){
+    textInputs.forEach(element=>{
+      if(element.id != e.id){
+        element.disabled=false
+
+      }
+    })
+  }
+  if(e.type =='checkbox'){
+    textInputs.forEach(element=>{
+      if(element.id != e.id){
+        element.disabled=false
+      }
+    })
+    
+  }
+}
